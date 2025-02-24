@@ -59,7 +59,7 @@ const CreateNote: React.FC<ICreateNoteProps> = ({ addNotes }) => {
 
     setNote({
       ...note,
-      [e.target.name]: [e.target.value],
+      [e.target.name]: e.target.value,
     });
   };
 

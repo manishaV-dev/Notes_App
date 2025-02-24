@@ -7,7 +7,7 @@ interface INoteProps {
   deleteNote: (id: string) => void;
 }
 
-const Notes: React.FC<INoteProps> = ({ notes, deleteNote }) => {
+const Notes: React.FC<INoteProps> = ({ notes = [], deleteNote }) => {
   return (
     <Box>
       <Typography variant="h4">Notes</Typography>
