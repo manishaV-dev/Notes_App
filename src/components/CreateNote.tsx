@@ -94,7 +94,6 @@ const CreateNote: React.FC<ICreateNoteProps> = ({ addNotes }) => {
           type="color"
           placeholder="Choose Color"
           defaultValue={"#f5f5f5"}
-          value={note.color}
           onChange={(e) => onValueChange(e)}
           name="color"
         />

@@ -11,6 +11,7 @@ import {
 
 interface iNoteProps {
   note: NoteObject;
+  deleteNote: (id: string) => void;
 }
 
 const StyledCard = styled(Card)`
@@ -27,7 +28,7 @@ const Wrapper = styled(Box)`
   }
 `;
 
-const NoteList: React.FC<iNoteProps> = ({ note }) => {
+const NoteList: React.FC<iNoteProps> = ({ note, deleteNote }) => {
   return (
     <StyledCard style={{ backgroundColor: note.color }}>
       <CardContent>
@@ -35,7 +36,9 @@ const NoteList: React.FC<iNoteProps> = ({ note }) => {
           <Typography variant="h5">{note.title}</Typography>
           <Typography>{note.details}</Typography>
           <Typography style={{ marginTop: "15px" }}>{note.date}</Typography>
-          <Button variant="outlined">Delete</Button>
+          <Button variant="outlined" onClick={() => deleteNote(note.id)}>
+            Delete
+          </Button>
         </Wrapper>
       </CardContent>
     </StyledCard>
